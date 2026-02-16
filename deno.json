@@ -1,6 +1,6 @@
 {
   "name": "@cbdstudios/aws-cognito-identity",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "description": "Unofficial Amazon Cognito User Pools SDK for Deno and TypeScript: sign-up, sign-in (SRP), MFA, tokens, and optional SigV4 for API Gateway/AppSync.",
   "exports": {
