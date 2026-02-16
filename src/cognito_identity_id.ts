@@ -2,6 +2,7 @@ import type { Client } from "./client.ts";
 import type { CognitoStorage } from "./storage.ts";
 import type { CognitoUserPool } from "./cognito_user_pool.ts";
 
+/** Identity ID from Cognito Identity Pool (used with {@link CognitoCredentials}). */
 export class CognitoIdentityId {
   identityId: string | null = null;
   private _identityIdKey: string;

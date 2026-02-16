@@ -1,5 +1,6 @@
 import type { AttributeArg } from "./attribute_arg.ts";
 
+/** Credentials and optional validation data for sign-in (used with {@link CognitoUser.authenticateUser}). */
 export class AuthenticationDetails {
   constructor(
     public username?: string | null,

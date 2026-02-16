@@ -3,6 +3,7 @@ import { CognitoClientException } from "./cognito_client_exceptions.ts";
 import { CognitoIdentityId } from "./cognito_identity_id.ts";
 import type { CognitoUserPool } from "./cognito_user_pool.ts";
 
+/** AWS temporary credentials from an Identity Pool (for SigV4, S3, etc.). */
 export class CognitoCredentials {
   accessKeyId: string | null = null;
   secretAccessKey: string | null = null;

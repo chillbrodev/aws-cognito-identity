@@ -2,6 +2,7 @@ import type { CognitoAccessToken } from "./cognito_access_token.ts";
 import type { CognitoIdToken } from "./cognito_id_token.ts";
 import type { CognitoRefreshToken } from "./cognito_refresh_token.ts";
 
+/** Session containing id, access, and refresh tokens; check {@link CognitoUserSession.isValid} before use. */
 export class CognitoUserSession {
   invalidated = false;
 

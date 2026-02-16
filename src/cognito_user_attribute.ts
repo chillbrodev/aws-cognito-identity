@@ -1,3 +1,4 @@
+/** User attribute (name/value) returned by {@link CognitoUser.getUserAttributes}. */
 export class CognitoUserAttribute {
   constructor(
     public name?: string | null,

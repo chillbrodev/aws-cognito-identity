@@ -11,6 +11,7 @@ export interface CognitoStorage {
 
 const dataMemory: Record<string, unknown> = {};
 
+/** In-memory implementation of {@link CognitoStorage}; data is lost when the process exits. */
 export class CognitoMemoryStorage implements CognitoStorage {
   async setItem(key: string, value: unknown): Promise<unknown> {
     dataMemory[key] = value;
@@ -32,6 +33,7 @@ export class CognitoMemoryStorage implements CognitoStorage {
   }
 }
 
+/** Wrapper that exposes a {@link CognitoStorage} instance (e.g. for pool or user). */
 export class CognitoStorageHelper<S extends CognitoStorage> {
   constructor(public storage: S) {}
   getStorage(): S {

@@ -645,6 +645,16 @@ and a short checklist.
 
 ---
 
+## JSR score
+
+To reach a 100% [JSR score](https://jsr.io/@cbdstudios/aws-cognito-identity/score):
+
+- **Done in this repo:** README, examples, module docs on all entrypoints, JSDoc on exported symbols, `description` in `deno.json`, no slow types.
+- **On JSR:** In the package’s **Settings** on [jsr.io](https://jsr.io/), set the **description** (if not taken from `deno.json`) and mark at least one **runtime** as compatible (e.g. Deno, Node) so “at least one/two runtimes” are satisfied.
+- **Provenance:** Publish from CI with a verifiable workflow so the package gets a transparency log entry. For example, link the package to your GitHub repo in JSR settings, then add a workflow that runs `deno publish` (or `npx jsr publish`) with `id-token: write` so JSR can verify the build.
+
+---
+
 ## License
 
 MIT

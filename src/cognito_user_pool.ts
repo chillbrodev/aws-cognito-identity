@@ -8,6 +8,7 @@ import type { CognitoUser } from "./cognito_user.ts";
 import type { ParamsDecorator } from "./params_decorators.ts";
 import { noOpsParamsDecorator } from "./params_decorators.ts";
 
+/** Result of {@link CognitoUserPool.signUp}: user, confirmation status, and sub. */
 export class CognitoUserPoolData {
   constructor(
     public user: CognitoUser,
@@ -27,6 +28,7 @@ export class CognitoUserPoolData {
   }
 }
 
+/** Cognito User Pool: create with pool ID and client ID; use for sign-up, getCurrentUser, and constructing {@link CognitoUser}. */
 export class CognitoUserPool {
   client: Client | null;
   storage: CognitoStorage;

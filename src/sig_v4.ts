@@ -1,3 +1,17 @@
+/**
+ * AWS Signature Version 4 – sign HTTP requests for API Gateway, AppSync, S3, etc.
+ * Use with Cognito session credentials to call protected APIs.
+ *
+ * @example
+ * ```ts
+ * import { AwsSigV4Client, SigV4Request } from "jsr:@cbdstudios/aws-cognito-identity/sig_v4";
+ * const client = new AwsSigV4Client(accessKey, secretKey, "https://api.example.com");
+ * const req = new SigV4Request(client, { method: "POST", path: "/graphql", body: { query } });
+ * await req.sign(session.getIdToken().getJwtToken());
+ * ```
+ *
+ * @module
+ */
 import {
   bytesToHex,
   hexToBytes,
@@ -15,6 +29,7 @@ const AUTHORIZATION = "Authorization";
 const DEFAULT_CONTENT_TYPE = "application/json";
 const DEFAULT_ACCEPT_TYPE = "application/json";
 
+/** AWS credentials and endpoint for signing requests (use with {@link SigV4Request}). */
 export class AwsSigV4Client {
   endpoint: string;
   pathComponent: string | null;
@@ -34,6 +49,7 @@ export class AwsSigV4Client {
   }
 }
 
+/** Options for building a request to sign with {@link SigV4Request}. */
 export interface SigV4RequestOptions {
   method: string;
   path?: string | null;
@@ -44,6 +60,7 @@ export interface SigV4RequestOptions {
   body?: unknown;
 }
 
+/** HTTP request that can be signed with AWS SigV4; call {@link SigV4Request.sign} then use url/headers/body. */
 export class SigV4Request {
   method!: string;
   path!: string;
@@ -153,6 +170,7 @@ async function generateAuthorization(
   );
 }
 
+/** Static helpers for AWS Signature Version 4 (datetime, signing); used by {@link SigV4Request.sign}. */
 export class SigV4 {
   static generateDatetime(): string {
     const now = new Date();

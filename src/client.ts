@@ -24,6 +24,7 @@ function sanitizeParamsForRequest(params: Record<string, unknown>, allowAuthPara
   return out;
 }
 
+/** Options for the Cognito HTTP client (endpoint, region, user agent). */
 export interface ClientOptions {
   endpoint?: string | null;
   region?: string | null;
@@ -31,6 +32,7 @@ export interface ClientOptions {
   userAgent?: string | null;
 }
 
+/** HTTP client for Cognito Identity Provider API (InitiateAuth, RespondToAuthChallenge, etc.). */
 export class Client {
   private _service: string;
   private _userAgent: string;

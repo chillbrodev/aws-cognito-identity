@@ -1,5 +1,6 @@
 import { base64Decode, utf8Decode } from "./crypto.ts";
 
+/** Decoded JWT payload (sub, exp, iat, token_use, etc.). */
 export interface JwtPayload {
   sub?: string;
   token_use?: string;
@@ -10,6 +11,7 @@ export interface JwtPayload {
   [key: string]: unknown;
 }
 
+/** Base class for Cognito JWT tokens (id, access); provides decode and getters for payload claims. */
 export class CognitoJwtToken {
   payload: JwtPayload = {};
 

@@ -1,3 +1,4 @@
+/** Thrown when a Cognito API request fails (e.g. NotAuthorizedException, UserNotFoundException). */
 export class CognitoClientException extends Error {
   declare name: string;
   constructor(

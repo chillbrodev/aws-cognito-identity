@@ -1,0 +1,23 @@
+# Publish to JSR with provenance (improves JSR score).
+# 1. Link this repo to your package in JSR package settings (jsr.io).
+# 2. Push to main (or trigger manually); workflow runs deno publish.
+name: Publish to JSR
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - run: deno publish --dry-run
+      - run: deno publish

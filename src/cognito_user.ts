@@ -31,17 +31,20 @@ import { getNowString } from "./date_helper.ts";
 import type { ParamsDecorator } from "./params_decorators.ts";
 import { noOpsParamsDecorator } from "./params_decorators.ts";
 
+/** Result shape from auth challenge callbacks (challenge name, session, auth result). */
 export interface CognitoUserAuthResult {
   challengeName?: string | null;
   session?: string | null;
   authenticationResult?: unknown;
 }
 
+/** MFA setting (preferred and enabled flags). */
 export interface IMfaSettings {
   preferredMfa: boolean;
   enabled: boolean;
 }
 
+/** Converts {@link IMfaSettings} to the map format expected by Cognito API. */
 export function imfaSettingsToMap(s: IMfaSettings): Record<string, boolean> {
   return { PreferredMfa: s.preferredMfa, Enabled: s.enabled };
 }
@@ -60,6 +63,7 @@ export function sanitizeForRequest(obj: Record<string, unknown> | null | undefin
   return Object.keys(out).length ? out : undefined;
 }
 
+/** Main auth API: sign-in (SRP), MFA, attributes, password change, sign-out. Use with {@link AuthenticationDetails} and {@link CognitoUserPool}. */
 export class CognitoUser {
   private _deviceKey: string | null = null;
   private _randomPassword: string | null = null;
