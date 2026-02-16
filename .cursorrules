@@ -1,0 +1,49 @@
+# Deno & TypeScript Rules for Cursor
+
+When working with Deno and TypeScript code, follow the rules and patterns defined in the `deno-rules/` and `typescript-rules/` directories.
+
+## Core Rules
+
+### Deno Runtime
+- @deno/deno-rules/runtime-overview.md - Deno runtime fundamentals
+- @deno/deno-rules/imports.md - Import system (JSR, NPM, import maps)
+- @deno/deno-rules/tasks-permissions.md - Tasks and permissions
+- @deno/deno-rules/standard-library.md - Standard library usage
+- @deno/deno-rules/apis.md - Deno runtime APIs
+- @deno/deno-rules/hono-framework.md - Hono web framework patterns
+- @deno/deno-rules/code-quality.md - Formatting and type checking
+- @deno/deno-rules/testing.md - Testing patterns
+- @deno/deno-rules/patterns.md - Deno-specific patterns
+- @deno/deno-rules/best-practices.md - Best practices
+- @deno/deno-rules/docker.md - Docker integration
+- @deno/deno-rules/commands.md - CLI commands
+- @deno/deno-rules/troubleshooting.md - Common issues
+
+### TypeScript
+- @deno/typescript-rules/type-system.md - Type system fundamentals
+- @deno/typescript-rules/type-safety.md - Type safety practices
+- @deno/typescript-rules/type-narrowing.md - Type narrowing patterns
+- @deno/typescript-rules/common-patterns.md - Common type patterns
+- @deno/typescript-rules/classes.md - Class patterns
+- @deno/typescript-rules/functions.md - Function types
+- @deno/typescript-rules/imports-exports.md - Import/export patterns
+- @deno/typescript-rules/errors.md - Error handling types
+- @deno/typescript-rules/testing.md - Testing types
+- @deno/typescript-rules/zod-validation.md - Zod validation patterns
+- @deno/typescript-rules/troubleshooting.md - TypeScript troubleshooting
+
+## Usage Guidelines
+
+1. **Always reference relevant rules** when working on Deno/TypeScript code
+2. **Follow Deno conventions**: Use `deno task`, include file extensions in imports, use JSR packages
+3. **Maintain type safety**: Avoid `any`, use proper type guards, leverage Zod for runtime validation
+4. **Use Hono patterns** for web APIs: Follow routing, middleware, and validation patterns from hono-framework.md
+5. **Test properly**: Use Deno's testing framework with proper mocking patterns
+
+## Quick Reference
+
+- **Starting a Deno project**: Check runtime-overview.md, imports.md, tasks-permissions.md
+- **Building APIs**: Follow hono-framework.md and zod-validation.md
+- **Type safety**: Reference type-system.md, type-safety.md, and zod-validation.md
+- **Testing**: See testing.md in both deno-rules and typescript-rules
+- **Troubleshooting**: Check troubleshooting.md files for common issues

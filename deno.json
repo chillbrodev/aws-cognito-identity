@@ -1,0 +1,16 @@
+{
+  "name": "@cbdstudios/aws-cognito-identity",
+  "version": "0.1.0",
+  "license": "MIT",
+  "exports": {
+    ".": "./cognito.ts",
+    "./sig_v4": "./src/sig_v4.ts"
+  },
+  "tasks": {
+    "dev": "deno run --watch main.ts",
+    "test:live": "deno run --allow-read --allow-net --allow-env scripts/test_cognito_live.ts"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1"
+  }
+}

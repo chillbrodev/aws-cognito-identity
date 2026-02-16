@@ -1,0 +1,25 @@
+# Env and secrets
+.env
+.env.local
+.env.*.local
+
+# Deno
+deno.lock
+
+# Build / output
+dist/
+build/
+*.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE (optional; remove if you commit workspace settings)
+.idea/
+*.swp
+*.swo
